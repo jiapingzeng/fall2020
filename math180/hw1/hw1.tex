@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+
+\title{Math 180 Homework 1}
+\date{10/5/2020}
+\author{Jiaping Zeng}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\begin{itemize}
+    \item [4.1.2] Which of the following statements about graphs $G$ and $H$ are true? Substantiate your answers!
+    \begin{itemize}
+        \item [(ii)] $G$ and $H$ are isomorphic if and only if there exists a bijection $f:E(G)\rightarrow E(H)$.\\\textbf{False}, by counter example: let $G=(V,E)=(\{1\},\emptyset)$ and $H=(V',E')=(\{1,2\},\emptyset)$; then there exists a bijection $f:E\rightarrow E'$ but $G$ and $H$ are not isomorphic.
+        \item [(iii)] If there exists a bijection $f:V(G)\rightarrow V(H)$ such that every vertex $u\in V(G)$ has the same degree as $f(u)$, then $G$ and $H$ are isomorphic.\\\textbf{True}, 
+        \item [(iv)] If $G$ and $H$ are isomorphic, then there exists a bijection $f:V(G)\rightarrow V(H)$ such that every vertex $u\in V(G)$ has the same degree as $f(u)$, then $G$ and $H$ are isomorphic.
+        \item [(v)] If $G$ and $H$ are isomorphic, then there exists a bijection $f:E(G)\rightarrow E(H)$.\\\textbf{True}; since $G$ and $H$ are isomorphic, by definition, there exists a bijection $f:V(G)\rightarrow V(H)$ such that $\{x,y\}\in E(G)\Leftrightarrow\{f(x),f(y)\}\in E(H)$ for distinct $x,y\in V(G)$. 
+        \item [(vi)] $G$ and $H$ are isomorphic if and only if there exists a map $f:V(G)\rightarrow V(H)$ such that for any two vertices $u,v\in V(G)$, we have $\{u,v\}\in E(G)\Leftrightarrow\{f(u),f(v)\}\in E(H)$.
+        \item [(vii)] Every graph on $n$ vertices is isomorphic to some graph on the vertex set $\{1,2,\ldots,n\}$.
+        \item [(viii)] Every graph on $n\geq 1$ vertices is isomorphic to infinitely many graphs.
+    \end{itemize}
+    \item [4.1.4] Show that a graph $G$ with $n$ vertices is assymetric if and only if $n!$ distinct graphcs on the set $V(G)$ are isomorphic to $G$.
+    \item [4.1.6] How many graphs on the vertex set $\{1,2,\ldots,2n\}$ are isomorphic to the graph consisting of $n$ vertex-disjoint edges?
+    \item [4.2.1]
+    \item [4.2.2]
+    \item [4.3.5]
+    \item [4.3.6]
+    \item [4.3.6]
+    \item [P0]
+    \item [P1]
+          \begin{itemize}
+              \item [1.]
+              \item [2.]
+              \item [3.]
+              \item [4.]
+          \end{itemize}
+\end{itemize}
+
+\end{document}
