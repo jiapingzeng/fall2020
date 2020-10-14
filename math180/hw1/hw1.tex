@@ -49,12 +49,56 @@
               \item [(vii)] Every graph on $n$ vertices is isomorphic to some graph on the vertex set $\{1,2,\ldots,n\}$.\\\textbf{Answer: True}, since the graph is isomorphic to itself.
               \item [(viii)] Every graph on $n\geq 1$ vertices is isomorphic to infinitely many graphs.\\\textbf{Answer: True}, since the vertices can be labeled infinitely number of ways.
           \end{itemize}
-    \item [4.1.4] Show that a graph $G$ with $n$ vertices is assymetric if and only if $n!$ distinct graphcs on the set $V(G)$ are isomorphic to $G$.\\\textbf{Answer: }
-    \item [4.1.6] How many graphs on the vertex set $\{1,2,\ldots,2n\}$ are isomorphic to the graph consisting of $n$ vertex-disjoint edges?\\\textbf{Answer: }
-    \item [4.2.1] Prove that the complement of a disconnected graph $G$ is connected.\\\textbf{Answer: }
-    \item [4.2.2] What is the maximum possible number of edges of a graph with $n$ vertices and $k$ components?\\\textbf{Answer: } To construct a graph with $n$ vertices and $k$ components with the maximum possible number of edges would be to construct a complete graph with as many vertices as possible, then leave the rest of the vertices as components. In other words, we would have $k-1$ single vertices and a complete graph with $n-k+1$ vertices, which gives us $n-k+1\choose 2$ edges.
-    \item [4.3.5] Draw all nonisomorphic graphs with score (6,3,3,3,3,3,3). Prove that none was left out.\\\textbf{Answer: }
-    \item [4.3.6] Find an example, as small as possible, of a graph with 6 vertices of degree 3, other vertices of degree $\leq 2$, and with 12 edges.\\\textbf{Answer: } By Prop. 4.3.1, $\text{deg}_G(v)=24$. Then the smallest graph would have 6 vertices of degree 3 and 3 vertices of degree 2.
+    \item [4.1.4] Show that a graph $G$ with $n$ vertices is asymmetric if and only if $n!$ distinct graphs on the set $V(G)$ are isomorphic to $G$.\\\textbf{Answer: }\begin{itemize}
+              \item [$\Rightarrow$: ] If $G$ is asymmetric, then its only automorphism is the identity mapping. Then we can relabel the vertices to form different graphs and there are $n!$ ways of rearranging the labels.
+              \item [$\Leftarrow$: ] If $n!$ distinct graphs on the set $V(G)$ are isomorphic to $G$, since we already know that relabeling the vertices would give us $n!$ graphs, there cannot be other graphs on $V(G)$ isomorphic to $G$. Therefore $G$ is asymmetric.
+          \end{itemize}
+    \item [4.1.6] How many graphs on the vertex set $\{1,2,\ldots,2n\}$ are isomorphic to the graph consisting of $n$ vertex-disjoint edges?\\\textbf{Answer: } Select an arbitrary vertex, there are $(2n-1)$ choices for the first pair. Then we can select another arbitrary vertex from the rest of the set, following the same logic there are $(2n-3)$ choices to complete the second pair. Then we have $(2n-1)(2n-3)\ldots\cdot 5\cdot 3$ possible graphs in total.
+    \item [4.2.1] Prove that the complement of a disconnected graph $G$ is connected.\\\textbf{Answer: } Let $H$ be the complement of $G$. For arbitrary vertices $x,y$ in $G$, on the one hand, if $\{x,y\}\notin E(G)$, then $\{x,y\}\in E(H)$ and they are connected by definition of connectedness. On the other hand, if $\{x,y\}\in E(G)$, then $x,y$ are in the same component in $G$. By definition of component, there must exist a vertex $z$ in a different component such that neither of $x,y$ is connected to $z$. Then $xyz$ is connected in $H$. Therefore $H$ is connected.
+    \item [4.2.2] What is the maximum possible number of edges of a graph with $n$ vertices and $k$ components?\\
+          \textbf{Answer: } To construct a graph with $n$ vertices and $k$ components with the maximum possible number of edges would be to construct a complete graph with as many vertices as possible, then leave the rest of the vertices as components. In other words, we would have $k-1$ single vertices and a complete graph with $n-k+1$ vertices, which gives us $n-k+1\choose 2$ edges.
+    \item [4.3.5] Draw all nonisomorphic graphs with score (6,3,3,3,3,3,3). Prove that none was left out.\\\textbf{Answer: }\\
+          \begin{tikzpicture}
+              [scale=0.5]
+              \node (v1) at (2,10) {a};
+              \node (v2) at (4,10) {b};
+              \node (v3) at (5,8) {c};
+              \node (v4) at (4,6) {d};
+              \node (v5) at (2,6) {e};
+              \node (v6) at (1,8) {f};
+              \node (v7) at (3,8) {g};
+              \foreach \from/\to in {v1/v2,v2/v3,v3/v4,v4/v5,v5/v6,v6/v1,v7/v1,v7/v2,v7/v3,v7/v4,v7/v5,v7/v6}
+              \draw (\from) -- (\to);
+          \end{tikzpicture}
+          \hspace{30px}
+          \begin{tikzpicture}
+              [scale=0.5]
+              \node (v1) at (4,7) {a};
+              \node (v2) at (2,9) {b};
+              \node (v3) at (2.75,7) {c};
+              \node (v4) at (2,5) {d};
+              \node (v5) at (6,9) {e};
+              \node (v6) at (5.25,7) {f};
+              \node (v7) at (6,5) {g};
+              \foreach \from/\to in {v1/v2,v1/v3,v1/v4,v1/v5,v1/v6,v1/v7,v2/v3,v2/v4,v3/v4,v5/v6,v5/v7,v6/v7}
+              \draw (\from) -- (\to);
+          \end{tikzpicture}\\
+          These are the only two nonisomorphic graphs because the 6 vertices with degree 3 are symmetrical, i.e. other graphs with the same score would be isomorphic to one of the two graphs above.
+    \item [4.3.6] Find an example, as small as possible, of a graph with 6 vertices of degree 3, other vertices of degree $\leq 2$, and with 12 edges.\\\textbf{Answer: } By Prop. 4.3.1, $\text{deg}_G(v)=24$. Then the smallest graph would have 6 vertices of degree 3 and 3 vertices of degree 2.\\
+          \begin{tikzpicture}
+              [scale=0.5]
+              \node (v1) at (1,10) {a};
+              \node (v2) at (2,9) {b};
+              \node (v3) at (2,8) {c};
+              \node (v4) at (2,7) {d};
+              \node (v5) at (2,6) {e};
+              \node (v6) at (1,5) {f};
+              \node (v7) at (8,8.5) {g};
+              \node (v8) at (8,7.5) {h};
+              \node (v9) at (8,6.5) {i};
+              \foreach \from/\to in {v1/v2,v2/v3,v3/v4,v4/v5,v5/v6,v6/v1,v1/v7,v2/v7,v3/v8,v4/v8,v5/v9,v6/v9}
+              \draw (\from) -- (\to);
+          \end{tikzpicture}
     \item [P0] Find the number of subgraphs of $K_6$ isomorphic to each of the following: $K_4$, $C_4$, $P_4$, and $K_{2,3}$.\\\textbf{Answer: }\begin{itemize}
               \item [$K_4$:] \textbf{15 subgraphs}; we can get $K_4$ from $K_6$ by removing any two vertices and their connected edges. Since we can choose the edges ${6\choose 2}=15$ number of ways, there are 15 subgraphs.
               \item [$C_4$:] \textbf{45 subgraphs}; we can get $C_4$ from $K_4$ by removing a pair of edges that are not connected to the same vertex. We first remove one random edge (we can choose from any 6), then for each edge there exists exactly one other edge that we can remove. Since the order we remove the two edges does not matter, there are $\frac{6}{2}=3$ ways to remove the pair of edges. Then there exist ${6\choose 2}\cdot 3=45$ subgraphs of $C_4$ in $K_6$.
@@ -66,7 +110,7 @@
               \item [1.] Find the number of paths from $u$ to $v$ of length 2.\\\textbf{Answer: } Since $E=\{\{x,y\}\mid 1\leq i,j\leq n\}$ and $u,v$ are nonadjacent, we must have either $u,v\in X$ or $u,v\in Y$. Suppose $u,v\in X$, then a path of length 2 from $u$ to $v$ would be from $u$ to $y_i$ to $v$, $1\leq i\leq n$. Therefore there are exactly $n$ such paths and the same applies if $u,v\in Y$.
               \item [2.] Same for length 3.\\\textbf{Answer: } This is not possible; assume $u\in X$, then path of length 3 means that $v\in Y$. This contradicts with that $u,v$ must be both in $X$ or both in $Y$ as established in the previous part.
               \item [3.] Same for length 4.\\\textbf{Answer: } Assume $u,v\in X$ (the result is the same for $u,v\in Y$ too by symmetry), in addition let $w\in X$. By part 1 there exists $n$ paths of length 2 between $u$ and $w$. Choose arbitrary path $u\rightarrow p\rightarrow w$, $p\in Y$, we then have $n-1$ options for the third edge to connect to (all $y_i\in Y$ except $p$). Then we have $n-2$ options for the last edge (all $x_i\in X$ except $u$ and $w$). Therefore there are $n(n-1)(n-2)$ such paths.
-              \item [4.] Same for length $2m$, where $m$ is some integer $\geq 1$.\\\textbf{Answer: } There are $\frac{n!}{(n-2m+1)!}$ such paths. Proof by induction:\\Base case: $m=1$, we have $n$ possible paths per part 1.\\Inductive step: Assume the hypothesis holds for length $2m$ and assume our path starts at a vertex in $X$ (by symmetry the result also holds if the path starts  at a vertex in Y). Let $P=\{p_1,\ldots,p_m\}\subset X$ be vertices on the path in $X$ and $Q=\{q_1,\ldots,q_{m-1}\}\subset Y$ be vertices on the path in $Y$. To add another 2 length to our path, the first edge can connect to any vertices in $Y\setminus Q$, which contains $n-m+1$ possibilities. The second edge can connect to any vertices in $X\setminus P$, which contains $n-m$ possibilities. Then the new walk of length $2m+2$ has $\frac{n!}{(n-m-1)!}(n-m+1)(n-m)=\frac{n!}{(n-m+1)!}$.\\Therefore there are $\frac{n!}{(n-m-1)!}$ such paths by mathematical induction.
+              \item [4.] Same for length $2m$, where $m$ is some integer $\geq 1$.\\\textbf{Answer: } There are $\frac{n!}{(n-m-1)!}$ such paths. Proof by induction:\\Base case: $m=1$, we have $n$ possible paths per part 1.\\Inductive step: Assume the hypothesis holds for length $2m$ and assume our path starts at a vertex in $X$ (by symmetry the result also holds if the path starts  at a vertex in Y). Let $P=\{p_1,\ldots,p_m\}\subset X$ be vertices on the path in $X$ and $Q=\{q_1,\ldots,q_{m-1}\}\subset Y$ be vertices on the path in $Y$. To add another 2 length to our path, the first edge can connect to any vertices in $Y\setminus Q$, which contains $n-m+1$ possibilities. The second edge can connect to any vertices in $X\setminus P$, which contains $n-m$ possibilities. Then the new walk of length $2m+2$ has $\frac{n!}{(n-m-1)!}(n-m+1)(n-m)=\frac{n!}{(n-m+1)!}$.\\Therefore there are $\frac{n!}{(n-m-1)!}$ such paths by mathematical induction.
           \end{itemize}
 \end{itemize}
 
