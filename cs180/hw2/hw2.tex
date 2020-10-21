@@ -72,13 +72,13 @@
           \textbf{Proof of correctness}: Let $S$ be the desired subset. We will show that the algorithm will always return $S$ by induction.\\
           Base case: When the desired set has only one element, i.e. $\abs{S}=1$; let $s_1$ be the only element of $S$ (note that $k=s_1$), then we have the following two possible scenarios:
           \begin{itemize}
-              \item [1.] $s_1$ is not present in the sequence: this is handled by step 1; $B(arr,k)$ would return NO and exit the program as it is not possible to construct a subset with sum $k$ from the sequence.
-              \item [2.] $s_1$ is in the sequence: since step 3 traverses through every element in the sequence, it will eventually traverse to $s_1$. Since $k=s_1$, $B(arr,k-s_1)$ will always evaluate to true as it is always possible to construct a subset of sum 0 by selecting the empty set.
+              \item [-] $s_1$ is not present in the sequence: this is handled by step 1; $B(arr,k)$ would return NO and exit the program as it is not possible to construct a subset with sum $k$ from the sequence.
+              \item [-] $s_1$ is in the sequence: since step 3 traverses through every element in the sequence, it will eventually traverse to $s_1$. Since $k=s_1$, $B(arr,k-s_1)$ will always evaluate to true as it is always possible to construct a subset of sum 0 by selecting the empty set.
           \end{itemize}
           Inductive step: Suppose that given $k_n=s_1+\ldots+s_n$, the algorithm successfully returns $S_n=\{s_1,\ldots,s_n\}$. We want to show that given $k_{n+1}=k_n+s_{n+1}$, the algorithm will return $S_{n+1}=S_n\cup\{s_{n+1}\}$. We can show that such $s_{n+1}$ always exist and will be selected by the algorithm by examining the following scenarios:
           \begin{itemize}
-              \item [1.] Such $s_{n+1}$ does not exist: in this scenario, $B(arr,k_{n+1})$ would return NO and the program would exit after step 1.
-              \item [2.] Such $s_{n+1}$ exists: suppose $s_{n+1}$ appears in the sequence after each $s_i\in S_n$ has already been traversed, which we can guarantee upon renumbering. Then $B(arr,k_{n+1}-s_{n+1})$ is equivalent to $B(arr,k_n)$ which is assumed true by inductive hypothesis. Then the algorithm will construct and return $S_{n+1}$ by appending $s_{n+1}$ to $S$, as desired.
+              \item [-] Such $s_{n+1}$ does not exist: in this scenario, $B(arr,k_{n+1})$ would return NO and the program would exit after step 1.
+              \item [-] Such $s_{n+1}$ exists: suppose $s_{n+1}$ appears in the sequence after each $s_i\in S_n$ has already been traversed, which we can guarantee upon renumbering. Then $B(arr,k_{n+1}-s_{n+1})$ is equivalent to $B(arr,k_n)$ which is assumed true by inductive hypothesis. Then the algorithm will construct and return $S_{n+1}$ by appending $s_{n+1}$ to $S$, as desired.
           \end{itemize}
           Therefore the algorithm will always return a complete and correct result by mathematical induction.
           \textbf{Complexity}: $O(n)$, assuming $B(\cdot)$ is $O(1)$, since the algorithm traverses through the sequence only once.
