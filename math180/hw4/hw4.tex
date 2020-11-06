@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+
+\title{}
+\date{}
+\author{Jiaping Zeng}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\begin{itemize}
+    \item [6.4.1]
+    \item [7.1.2]
+          \textbf{Answer}: Suppose that when the tourist was descending along the trail, there was another tourist ascending along the same trail in the same fashion that the first tourist did on the day before. Then since the paths of both tourists are continuous, they must intersect at some point. The intersection point is the place that the tourist passed through at the same time on both days.
+    \item [7.2.7] Let $n$ be a natural number that is not divisible by the square of any integer greater than 1. Determine the maximum possible size of a set of divisors of $n$ such that no divisor in this set divides another (i.e. $\max\abs{M}$, where $x\in M\Rightarrow x\mid n$ and $x,y\in M,x\neq y\Rightarrow x$ doesn't divide y).\\
+          \textbf{Answer}:
+    \item [5.1.1] Draw all trees with vertex set $\{1,2,3,4\}$, and all pairwise nonisomorphic trees on 6 vertices.\\
+          \textbf{Answer}:
+    \item [5.1.2] Prove that any graph $G=(V,E)$ having no cycles and satisfying $\abs{V}=\abs{E}+1$ is a tree.\\
+          \textbf{Answer}: By definition, a tree is a connected graph containing no cycle. Since we already have that $G$ contains no cycle, we need to show that $G$ must be connected. Suppose that $G$ is not connected, then there must exist more than one component. Let $m=\abs{E}, n=\abs{V}$ and $c$ be the number of components, then by problem 5.1.4 (below), we have $m\geq n-c$. Using our given $\abs{V}=\abs{E}+1\implies n=m+1$, we have $m\geq m+1-c\implies c\geq 1$.
+    \item [5.1.4] Prove that a graph on $n$ vertices with $c$ components has at least $n-c$ edges.\\
+          \textbf{Answer}: By induction on $c$.\\
+          Base case: $c=1$; then the graph is connected. Such graph with as few edges as possible is a path, with has exactly $n-1$ edges.\\
+          Inductive step: Suppose that all graphs on $n$ vertices with $c$ components have at least $n-c$ edges, we want to show that all graphs on $n$ vertices with $c+1$ components have at least $n-c-1$ edges. To create an extra component from our graph with $c$ components, we can simply disconnect a edge from a vertex with degree 1, which gives us $n-c-1$ edges.\\
+          Therefore a graph on $n$ vertices with $c$ components has at least $n-c$ edges.
+    \item [P9]
+          \begin{itemize}
+              \item [(a)]\textbf{Answer}: A crown graph has chromatic number 2 since it is bipartite.
+              \item [(b)]
+          \end{itemize}
+\end{itemize}
+\end{document}
