@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{relsize}
+
+\title{Math 132 Homework 6}
+\date{11/8/2020}
+\author{Jiaping Zeng}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\begin{itemize}
+      \item [4.1.11] $\mathlarger{\sum_{n=0}^\infty\frac{e^{in\frac{\pi}{2}}}{2^n}}$\\
+            \textbf{Answer}: Let $a=\dfrac{e^{i\frac{\pi}{2}}}{2}$; since $\abs{a}=\abs{\dfrac{e^i\frac{\pi}{2}}{2}}=\dfrac{1}{2}<1$, by geometric series, $\mathlarger{\sum_{n=0}^\infty\frac{e^{in\frac{\pi}{2}}}{2^n}}$ converges to $\dfrac{1}{1-a}=\dfrac{2}{2-e^{i\frac{\pi}{2}}}$.
+      \item [4.1.12] $\mathlarger{\sum_{n=0}^\infty\left(\frac{1+i}{2}\right)^n}$\\
+            \textbf{Answer}: Let $a=\dfrac{1+i}{2}$; since $\abs{a}=\abs{\dfrac{1+i}{2}}=\dfrac{1}{4}<1$, then by geometric series $\mathlarger{\sum_{n=0}^\infty\left(\frac{1+i}{2}\right)^n}$ converges to $\dfrac{1}{1-a}=\dfrac{2}{1-i}$.
+      \item [4.1.13] $\mathlarger{\sum_{n=3}^\infty\frac{3-i}{(1+i)^n}}$\\
+            \textbf{Answer}: Let $a=\dfrac{1}{1+i}$, then since $\abs{a}=\abs{\dfrac{1}{1+i}}=\dfrac{\sqrt{2}}{2}<1$, by geometric series $\mathlarger{\sum_{n=0}^\infty\frac{1}{(1+i)^n}}$ converges to $\dfrac{1}{1-a}=\dfrac{1+i}{i}$. Then by substitution we have $\mathlarger{\sum_{n=3}^\infty\frac{3-i}{(1+i)^n}}=\dfrac{3-i}{(1+i)^3}\mathlarger{\sum_{n=0}^\infty\frac{1}{(1+i)^n}}=\dfrac{3-i}{(1+i)^3}\cdot\dfrac{1+i}{i}=\dfrac{3-i}{i(1+i)^2}=-\dfrac{3}{2}+\dfrac{i}{2}$.
+      \item [4.1.41] The $n$th partial sum of a series is $s_n=\dfrac{i}{n}$. Does the series converge or diverge? If it does converge, what is its limit?\\
+            \textbf{Answer}: Since $\abs{\mathlarger{\lim_{n\rightarrow\infty}}s_n}=\abs{\mathlarger{\lim_{n\rightarrow\infty}}\dfrac{i}{n}}=\mathlarger{\lim_{n\rightarrow\infty}}\abs{\dfrac{i}{n}}=\mathlarger{\lim_{n\rightarrow\infty}}\dfrac{1}{n}=0$, the series converges to $0$.
+      \item [4.2.1] $f_n(x)=\dfrac{\sin nx}{n},0\leq x\leq\pi$
+            \begin{itemize}
+                  \item [(a)] \textbf{Answer}: $\lim_{n\rightarrow\infty}\dfrac{\sin nx}{n}=0$, so $f_n\rightarrow f$ pointwise for $f(x)=0$.
+                  \item [(b)] \textbf{Answer}: Since $\abs{\sin nx}\leq 1$ for all $x$, we have $\abs{f_n(x)-f(x)}=\abs{\dfrac{\sin nx}{n}-0}\rightarrow 0$ as $n\rightarrow\infty$, then $f_n$ converge uniformly by Jumping Prop.
+                  \item [(c)] \textbf{Answer}: N/A; $f_n$ converges uniformly.
+            \end{itemize}
+      \item [4.2.2] $f_n(x)=\dfrac{\sin nx}{nx},0<x\leq\pi$
+            \begin{itemize}
+                  \item [(a)] \textbf{Answer}: $\lim_{n\rightarrow\infty}\dfrac{\sin nx}{nx}=0$ since $\abs{\dfrac{\sin nx}{nx}}\leq\dfrac{1}{n\abs{x}}\rightarrow 0$, so $f_n\rightarrow f$ pointwise for $f(x)=0$.
+                  \item [(b)] \textbf{Answer}: Let $x_n=\dfrac{1}{n}$, then $f_n(x_n)=\dfrac{\sin 1}{1}\geq 0$. Then $\abs{f_n(x_n)-f(x_n)}=\abs{\dfrac{\sin 1}{1}-0}\neq 0$. Therefore $f_n$ does not converge uniformly by Jumping Prop.
+                  \item [(c)] \textbf{Answer}: Yes, for interval $[a,\pi]$ where $a\geq 0$. We have $M_n=\mathlarger{\sup_{[a,\pi]}}\abs{f_n(x)-f(x)}=\mathlarger{\sup_{[a,\pi]}}\abs{\dfrac{\sin nx}{nx}}\leq\dfrac{1}{na}\rightarrow 0$ as $n\rightarrow\infty$, so $f_n$ converges uniformly.
+            \end{itemize}
+      \item [4.2.13] $\mathlarger{\sum_{n=1}^\infty\frac{z^n}{n(n+1)},\abs{z}\leq 1}$\\
+            \textbf{Answer}: $\abs{f_k(z)}=\abs{\dfrac{z^n}{n(n+1)}}=\dfrac{\abs{z^n}}{n(n+1)}$; since $\abs{z}\leq 1$, we have $\abs{z^n}\leq 1$. Then we can define $M_k$ such that $\abs{f_k(z)}\leq\dfrac{1}{n(n+1)}=M_k$, so $\mathlarger{\sum_{k=1}^\infty M_k=\sum_{k=1}^\infty\dfrac{1}{n(n+1)}=\sum_{k=1}^\infty\dfrac{1}{n}-\dfrac{1}{n+1}}$, which converges to $1$ by cancelling out adjacent terms in the telescoping series. Therefore the given series converges uniformly by Weierstrass $M$-test.
+      \item [4.2.17] $\mathlarger{\sum_{n=0}^\infty\left(\frac{z+2}{5}\right)^n,\abs{z}\leq 2}$\\
+            \textbf{Answer}: Since $\abs{z}\leq 2$, we have $\abs{f_k(z)}=\abs{\left(\dfrac{z+2}{5}\right)^n}\leq\left(\dfrac{4}{5}\right)^n$. Then we can define $M_k=\left(\dfrac{4}{5}\right)^n$ and by geometric series $\mathlarger{\sum_{k=0}^\infty M_k}$ is convergent. Therefore the given series converge by Weierstrass $M$-test.
+      \item [4.2.19] $\mathlarger{\sum_{n=0}^\infty\frac{(z+1-3i)^n}{4^n},\abs{z-3i}\leq 0.5}$\\
+            \textbf{Answer}: Since $\abs{z-3i}\leq 0.5$, by triangle inequality we have $\abs{f_k(z)}=\abs{\dfrac{(z+1-3i)^n}{4^n}}\leq\dfrac{1.5^n}{4^n}=\left(\dfrac{3}{8}\right)^n$. Then we can define $M_k=\left(\dfrac{3}{8}\right)^n$ and by geometric series $\mathlarger{\sum_{k=0}^\infty M_k}$ is convergent. Therefore the given series is convergent by Weierstrass $M$-test.
+      \item [4.3.1] $\mathlarger{\sum_{n=0}^\infty(-1)^n\frac{z^n}{2n+1}}$\\
+            \textbf{Answer}: Using the Ratio Test, we have $\rho=\mathlarger{\lim_{k\rightarrow\infty}}\dfrac{\abs{C_{k+1}}}{\abs{C_k}}=\mathlarger{\lim_{k\rightarrow\infty}}\abs{\dfrac{(-1)^{k+1}z^{k+1}}{2k+3}}\cdot\abs{\dfrac{2k+1}{(-1)^kz^k}}=\mathlarger{\lim_{k\rightarrow\infty}}\abs{\dfrac{-z(2k+1)}{2k+3}}=\abs{z}\mathlarger{\lim_{k\rightarrow\infty}}\dfrac{2k+1}{2k+3}=\abs{z}$. Then $\rho=\abs{z}<1\implies\abs{z}<1$. So the radius of convergence is $R=1$.
+      \item [4.3.3] $\mathlarger{\sum_{n=0}^\infty 2^n\dfrac{(z-i)^n}{n!}}$\\
+            \textbf{Answer}: Using the Ratio Test, we have $\rho=\mathlarger{\lim_{k\rightarrow\infty}}\dfrac{\abs{C_{k+1}}}{\abs{C_k}}=\mathlarger{\lim_{k\rightarrow\infty}}\abs{\dfrac{2^{k+1}(z-i)^{k+1}}{(k+1)!}}\cdot\abs{\dfrac{k!}{2^k(z-i)^k}}=\mathlarger{\lim_{k\rightarrow\infty}}\abs{\dfrac{2z-2i}{k+1}}=\abs{2z-2i}\mathlarger{\lim_{k\rightarrow\infty}}\dfrac{1}{k+1}=0$. Since $0<1$ is always true, the radius of convergence is $\infty$.
+      \item [4.3.5] $\mathlarger{\sum_{n=0}^\infty\frac{(4iz-2)^n}{2^n}}$\\
+            \textbf{Answer}: Using the Ratio Test, we have $\rho=\mathlarger{\lim_{k\rightarrow\infty}}\dfrac{\abs{C_{k+1}}}{\abs{C_k}}=\mathlarger{\lim_{k\rightarrow\infty}}\abs{\dfrac{(4iz-2)^{k+1}}{2^{k+1}}}\cdot\abs{\dfrac{2^k}{(4iz-2)^k}}=\mathlarger{\lim_{k\rightarrow\infty}}\abs{2iz-1}=\abs{2iz-1}=2\abs{z+\dfrac{i}{2}}$. Then $\rho=2\abs{z+\dfrac{i}{2}}<1\implies\abs{z+\dfrac{i}{2}}\leq\dfrac{1}{2}$. So the radius of convergence is $R=\dfrac{1}{2}$.
+      \item [P1] Find the radius of convergence of the power series $\mathlarger{\sum_{n=1}^\infty\frac{z^{2n}}{(in)^{2n}}}$.\\
+            \textbf{Answer}: Using the Ratio Test, we have $\rho=\mathlarger{\lim_{k\rightarrow\infty}}\dfrac{\abs{C_{k+1}}}{\abs{C_k}}=\mathlarger{\lim_{k\rightarrow\infty}}\abs{\dfrac{z^{2k+2}}{i^{2k+2}(k+1)^{2k+2}}}\cdot\abs{\dfrac{i^{2k}k^{2k}}{z^{2k}}}=\mathlarger{\lim_{k\rightarrow\infty}}\abs{\dfrac{z^2k^{2k}}{(k+1)^{2k+2}}}=\abs{z^2}\mathlarger{\lim_{k\rightarrow\infty}}\dfrac{k^{2k}}{(k+1)^{2k+2}}=0$. Therefore the radius of convergence is $\infty$.
+      \item [P2] Let $f_n:\mathbb{R}\rightarrow\mathbb{R}$ be the sequence of functions defined by \[f_n(x)\stackrel{\text{def}}{=}\begin{cases}
+                        1, & \text{if }x\in[n,n+1]; \\
+                        0, & \text{otherwise}.
+                  \end{cases}\] Determine if the sequence $(f_n)_{n=1}^\infty$ converges pointwise on $\mathbb{R}$. If it does, determine whether or not the convergence is uniform.\\
+            \textbf{Answer}: Since that for each $x$, $f_n(x)=0$ for $n>x$; by definition the sequence converges pointwise with limit $\mathlarger{\lim_{n\rightarrow\infty}}f_n(x)=0$. Let $x_n=n$, then $\abs{f_n(x_n)-f(x)}=1\neq 0$. Therefore by Jumping Prop., $f_n$ does not converge uniformly.
+\end{itemize}
+\end{document}
