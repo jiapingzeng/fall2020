@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{physics}
+\usepackage{relsize}
 
 \title{Math 132 Homework 7}
 \date{11/16/2020}
@@ -15,14 +16,22 @@
 \maketitle
 
 \begin{itemize}
-    \item [4.4.2]
-    \item [4.4.3]
-    \item [4.4.5]
-    \item [4.4.6]
-    \item [4.5.1]
-    \item [4.5.2]
-    \item [4.5.4]
-    \item [4.5.13]
+    \item [4.4.2] $\dfrac{\sin z}{e^z},z_0=1+7i$.\\
+          \textbf{Answer}: $\dfrac{\sin z}{e^z}$ is analytic everywhere, so $R=\infty$.
+    \item [4.4.3] $\dfrac{z}{z-3i},z_0=0$.\\
+          \textbf{Answer}: $\dfrac{z}{z-3i}$ is analytic for $z\neq 3i$, so $R=\abs{z_0-3i}=\abs{0-3i}=3$.
+    \item [4.4.5] $\dfrac{z+1}{z-i},z_0=2+i$.\\
+          \textbf{Answer}: $\dfrac{z+1}{z-i}$ is analytic for $z\neq i$, so $R=\abs{z_0-i}=\abs{2+i-i}=2$.
+    \item [4.4.6] $\dfrac{\sin z}{z^2+4},z_0=3$.\\
+          \textbf{Answer}: $\dfrac{\sin z}{z^2+4}$ is analytic for $z\neq\pm 2i$, so $R=\min\{\abs{z_0-2i},\abs{z_0+2i}\}=\min\{\abs{3-2i},\abs{3+2i}\}=\min\{\sqrt{13},\sqrt{13}\}=\sqrt{13}$.
+    \item [4.5.1] $\dfrac{1}{1+z^2},1<\abs{z}$.\\
+          \textbf{Answer}: Let $w=\frac{1}{z^2}$; then $1<\abs{z}\implies\abs{\frac{1}{z^2}}=\abs{w}<1$. By substitution we have $\dfrac{1}{1+z^2}=\dfrac{\frac{1}{z^2}}{1+\frac{1}{z^2}}=w\cdot\dfrac{1}{1-(-w)}$. Since $\abs{w}<1$, we can use the geometric series as follows: $w\cdot\dfrac{1}{1-(-w)}=w\mathlarger{\sum_{n=0}^\infty (-w)^n}=\mathlarger{\sum_{n=0}^\infty} (-1)^nw^{n+1}=\mathlarger{\sum_{n=0}^\infty}\dfrac{(-1)^n}{z^{2n+2}}$.
+    \item [4.5.2] $\dfrac{3+z}{2-z},2<\abs{z}$.\\
+          \textbf{Answer}: 
+    \item [4.5.4] $z+\dfrac{1}{z},1<\abs{z-1}$.\\
+          \textbf{Answer}:
+    \item [4.5.13] $\dfrac{z}{(z+2)(z+3)},2<\abs{z}<3$.\\
+          \textbf{Answer}: By partial fraction we have $\dfrac{z}{(z+2)(z+3)}=\dfrac{A}{z+2}+\dfrac{B}{z+3}\implies z=A(z+3)+B(z+2)\implies A=-2,B=3$.
     \item [P1] Use the geometric series formula to derive the power series expansion for the given function $f$ centered at the given point $z_0$:
           \begin{itemize}
               \item [(a)] $f(z)=\frac{z}{1-z}$, centered at $z_0=0$.
@@ -31,10 +40,10 @@
               \item [(d)] $f(z)=\frac{1}{1-2z^3}$, centered at $z_0=0$.
           \end{itemize}
     \item [P2] Find the Laurent series for $\frac{1}{(z-i)(z+2i)}$ in the given domain:
-    \begin{itemize}
-        \item [(a)]
-        \item [(b)]
-        \item [(c)]
-    \end{itemize}
+          \begin{itemize}
+              \item [(a)] $A_{1,2}(0)$
+              \item [(b)] $A_{0,3}(i)$
+              \item [(c)] $A_{3,\infty}(i)$
+          \end{itemize}
 \end{itemize}
 \end{document}
