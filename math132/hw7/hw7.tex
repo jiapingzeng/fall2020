@@ -16,34 +16,41 @@
 \maketitle
 
 \begin{itemize}
-    \item [4.4.2] $\dfrac{\sin z}{e^z},z_0=1+7i$.\\
-          \textbf{Answer}: $\dfrac{\sin z}{e^z}$ is analytic everywhere, so $R=\infty$.
-    \item [4.4.3] $\dfrac{z}{z-3i},z_0=0$.\\
-          \textbf{Answer}: $\dfrac{z}{z-3i}$ is analytic for $z\neq 3i$, so $R=\abs{z_0-3i}=\abs{0-3i}=3$.
-    \item [4.4.5] $\dfrac{z+1}{z-i},z_0=2+i$.\\
-          \textbf{Answer}: $\dfrac{z+1}{z-i}$ is analytic for $z\neq i$, so $R=\abs{z_0-i}=\abs{2+i-i}=2$.
-    \item [4.4.6] $\dfrac{\sin z}{z^2+4},z_0=3$.\\
-          \textbf{Answer}: $\dfrac{\sin z}{z^2+4}$ is analytic for $z\neq\pm 2i$, so $R=\min\{\abs{z_0-2i},\abs{z_0+2i}\}=\min\{\abs{3-2i},\abs{3+2i}\}=\min\{\sqrt{13},\sqrt{13}\}=\sqrt{13}$.
-    \item [4.5.1] $\dfrac{1}{1+z^2},1<\abs{z}$.\\
-          \textbf{Answer}: Let $w=\frac{1}{z^2}$; then $1<\abs{z}\implies\abs{\frac{1}{z^2}}=\abs{w}<1$. By substitution we have $\dfrac{1}{1+z^2}=\dfrac{\frac{1}{z^2}}{1+\frac{1}{z^2}}=w\cdot\dfrac{1}{1-(-w)}$. Since $\abs{w}<1$, we can use the geometric series as follows: $w\cdot\dfrac{1}{1-(-w)}=w\mathlarger{\sum_{n=0}^\infty (-w)^n}=\mathlarger{\sum_{n=0}^\infty} (-1)^nw^{n+1}=\mathlarger{\sum_{n=0}^\infty}\dfrac{(-1)^n}{z^{2n+2}}$.
-    \item [4.5.2] $\dfrac{3+z}{2-z},2<\abs{z}$.\\
-          \textbf{Answer}: 
-    \item [4.5.4] $z+\dfrac{1}{z},1<\abs{z-1}$.\\
-          \textbf{Answer}:
-    \item [4.5.13] $\dfrac{z}{(z+2)(z+3)},2<\abs{z}<3$.\\
-          \textbf{Answer}: By partial fraction we have $\dfrac{z}{(z+2)(z+3)}=\dfrac{A}{z+2}+\dfrac{B}{z+3}\implies z=A(z+3)+B(z+2)\implies A=-2,B=3$.
-    \item [P1] Use the geometric series formula to derive the power series expansion for the given function $f$ centered at the given point $z_0$:
-          \begin{itemize}
-              \item [(a)] $f(z)=\frac{z}{1-z}$, centered at $z_0=0$.
-              \item [(b)] $f(z)=\frac{z^2+1}{z-1}$, centered at $z_0=0$.
-              \item [(c)] $f(z)=\frac{1}{(1-z)^3}$, centered at $z_0=0$.
-              \item [(d)] $f(z)=\frac{1}{1-2z^3}$, centered at $z_0=0$.
-          \end{itemize}
-    \item [P2] Find the Laurent series for $\frac{1}{(z-i)(z+2i)}$ in the given domain:
-          \begin{itemize}
-              \item [(a)] $A_{1,2}(0)$
-              \item [(b)] $A_{0,3}(i)$
-              \item [(c)] $A_{3,\infty}(i)$
-          \end{itemize}
+      \item [4.4.2] $\dfrac{\sin z}{e^z},z_0=1+7i$.\\
+            \textbf{Answer}: $\dfrac{\sin z}{e^z}$ is analytic everywhere, so $R=\infty$.
+      \item [4.4.3] $\dfrac{z}{z-3i},z_0=0$.\\
+            \textbf{Answer}: $\dfrac{z}{z-3i}$ is analytic for $z\neq 3i$, so $R=\abs{z_0-3i}=\abs{0-3i}=3$.
+      \item [4.4.5] $\dfrac{z+1}{z-i},z_0=2+i$.\\
+            \textbf{Answer}: $\dfrac{z+1}{z-i}$ is analytic for $z\neq i$, so $R=\abs{z_0-i}=\abs{2+i-i}=2$.
+      \item [4.4.6] $\dfrac{\sin z}{z^2+4},z_0=3$.\\
+            \textbf{Answer}: $\dfrac{\sin z}{z^2+4}$ is analytic for $z\neq\pm 2i$, so $R=\min\{\abs{z_0-2i},\abs{z_0+2i}\}=\min\{\abs{3-2i},\abs{3+2i}\}=\min\{\sqrt{13},\sqrt{13}\}=\sqrt{13}$.
+      \item [4.5.1] $\dfrac{1}{1+z^2},1<\abs{z}$.\\
+            \textbf{Answer}: We have $1<\abs{z}\implies\abs{\dfrac{1}{z^2}}<1$. Then we can use the geometric formula as follows: $\dfrac{1}{1+z^2}=\dfrac{1}{z^2}\cdot\dfrac{1}{1+\frac{1}{z^2}}=\dfrac{1}{z^2}\mathlarger{\sum_{n=0}^\infty}\dfrac{1}{z^{2n}}=\mathlarger{\sum_{n=0}^\infty}\dfrac{1}{z^{2n+2}}$.
+      \item [4.5.2] $\dfrac{3+z}{2-z},2<\abs{z}$.\\
+            \textbf{Answer}: We have $2<\abs{z}\implies\abs{\dfrac{2}{z}}<1$, so $\dfrac{3+z}{2-z}=\dfrac{3+z}{z}\cdot\dfrac{1}{1+\frac{2}{z}}=-\dfrac{3+z}{z}\mathlarger{\sum_{n=0}^\infty}\dfrac{2^n}{z^n}=\mathlarger{\sum_{n=0}^\infty}\dfrac{-(3+z)2^n}{z^{n+1}}$.
+      \item [4.5.4] $z+\dfrac{1}{z},1<\abs{z-1}$.\\
+            \textbf{Answer}: We have $1<\abs{z-1}\implies\abs{\dfrac{1}{z-1}}<1$, then $z+\dfrac{1}{z}=\dfrac{z^2+1}{z}=\dfrac{z^2+1}{1+(z-1)}=\dfrac{z^2+1}{z-1}\cdot\dfrac{1}{1+\frac{1}{(z-1)}}=\dfrac{z^2+1}{z-1}\mathlarger{\sum_{n=0}^\infty}\dfrac{1}{(z-1)^n}=\mathlarger{\sum_{n=0}^\infty}\dfrac{(-1)^n(z^2+1)}{(z-1)^{n+1}}$.
+      \item [4.5.13] $\dfrac{z}{(z+2)(z+3)},2<\abs{z}<3$.\\
+            \textbf{Answer}: By partial fractions we have $\dfrac{1}{(z+2)(z+3)}=\dfrac{A}{z+2}+\dfrac{B}{z+3}\implies 1=A(z+3)+B(z+2)\implies A=1,B=-1\implies\dfrac{z}{(z+2)(z+3)}=\dfrac{z}{z+2}+\dfrac{-z}{z+3}$. Then using our bounds $2<\abs{z}\implies\abs{\dfrac{2}{z}}<1$, we have $\dfrac{z}{z+2}=\dfrac{1}{1+\frac{2}{z}}=\mathlarger{\sum_{n=0}^\infty}\dfrac{(-2)^n}{z^n}$. Similarly, using $\abs{z}<3\implies\abs{\dfrac{z}{3}}<1$, we have $\dfrac{-z}{z+3}=\dfrac{-z}{3}\cdot\dfrac{1}{1+\frac{z}{3}}=\dfrac{-z}{3}\cdot\mathlarger{\sum_{n=0}^\infty}\dfrac{(-z)^n}{3^n}=\mathlarger{\sum_{n=0}^\infty}\dfrac{(-z)^{n+1}}{3^{n+1}}$. Therefore $\dfrac{z}{(z+2)(z+3)}=\dfrac{z}{z+2}+\dfrac{-z}{z+3}=\mathlarger{\sum_{n=0}^\infty}\dfrac{(-2)^n}{z^n}+\mathlarger{\sum_{n=0}^\infty}\dfrac{(-z)^{n+1}}{3^{n+1}}$.
+      \item [P1] Use the geometric series formula to derive the power series expansion for the given function $f$ centered at the given point $z_0$:
+            \begin{itemize}
+                  \item [(a)] $f(z)=\dfrac{z}{1-z}$, centered at $z_0=0$.\\
+                        \textbf{Answer}: By geometric series formula, we have $f(z)=-\dfrac{1}{1-\frac{1}{z}}=-\mathlarger{\sum_{n=0}^\infty}\dfrac{1}{z^n}$.
+                  \item [(b)] $f(z)=\dfrac{z^2+1}{z-1}$, centered at $z_0=0$.\\
+                        \textbf{Answer}: By geometric series formula, we have $f(z)=\dfrac{z^2+1}{z-1}=(z^2+1)\cdot\dfrac{-1}{1-z}=-(z^2+1)\mathlarger{\sum_{n=0}^\infty}z^n=-\mathlarger{\sum_{n=0}^\infty}z^{n+2}-\mathlarger{\sum_{n=0}^\infty}z^n=-1-z-2\mathlarger{\sum_{n=0}^\infty}z^{n+2}$.
+                  \item [(c)] $f(z)=\dfrac{1}{(1-z)^3}$, centered at $z_0=0$.\\
+                        \textbf{Answer}: By differentiating the geometric series formula twice, we have $\mathlarger{\sum_{n=0}^\infty}a^n=\dfrac{1}{1-a}\implies\mathlarger{\sum_{n=0}^\infty}na^{n-1}=\dfrac{1}{(a-1)^2}\implies\mathlarger{\sum_{n=0}^\infty}n(n-1)a^{n-2}=\dfrac{2}{(1-a)^3}$. Therefore by substitution we have $\dfrac{1}{(1-z)^3}=\dfrac{1}{2}\mathlarger{\sum_{n=0}^\infty}n(n-1)z^{n-2}$.
+                  \item [(d)] $f(z)=\dfrac{1}{1-2z^3}$, centered at $z_0=0$.\\
+                        \textbf{Answer}: By geometric series formula, we have $\dfrac{1}{1-2z^3}=\mathlarger{\sum_{n=0}^\infty}(2z^3)^n=\mathlarger{\sum_{n=0}^\infty}2^nz^{3n}$.
+            \end{itemize}
+      \item [P2] Find the Laurent series for $\dfrac{1}{(z-i)(z+2i)}$ in the given domain:
+            \begin{itemize}
+                  \item [(a)] $A_{1,2}(0)$\\
+                        \textbf{Answer}: $\dfrac{1}{(z-i)(z+2i)}=\dfrac{1}{3i}\left[\dfrac{1}{z-i}-\dfrac{1}{z+2i}\right]=\dfrac{1}{3i}\left[\dfrac{-1}{i}\cdot\dfrac{1}{1-\dfrac{z}{i}}+\dfrac{-1}{2i}\cdot\dfrac{1}{1+\dfrac{z}{2i}}\right]$ by partial fractions, then we have $\abs{\dfrac{z}{i}}=\dfrac{\abs{z}}{1}<1$ for $z\in A_{1,2}(0)$, so $\dfrac{1}{1-\dfrac{z}{i}}=\mathlarger{\sum_{n=0}^\infty}\dfrac{z^n}{i^n}$. Simiarly, we have $\abs{\dfrac{z}{2i}}=\dfrac{\abs{z}}{2}>1$ for $z\in A_{1,2}(0)$, so $\dfrac{1}{1+\dfrac{z}{2i}}=\mathlarger{\sum_{n=0}^\infty}\dfrac{(-1)^nz^n}{(2i)^n}$. Therefore $\dfrac{1}{(z-i)(z+2i)}=\dfrac{1}{3i}\left[\dfrac{-1}{i}\cdot\mathlarger{\sum_{n=0}^\infty}\dfrac{z^n}{i^n}+\dfrac{-1}{2i}\mathlarger{\sum_{n=0}^\infty}\dfrac{(-1)^nz^n}{(2i)^n}\right]=\dfrac{1}{3i}\left[-\mathlarger{\sum_{n=0}^\infty}\dfrac{z^n}{i^{n+1}}+\mathlarger{\sum_{n=0}^\infty}\dfrac{(-1)^{n+1}z^n}{(2i)^{n+1}}\right]$.
+                  \item [(b)] $A_{0,3}(i)$\\
+                        \textbf{Answer}: $\dfrac{1}{(z-i)(z+2i)}=\dfrac{1}{(z-i)(3i+(z-i))}=\dfrac{1}{z-i}\cdot\dfrac{1}{3i}\cdot\dfrac{1}{1+\dfrac{z-i}{3i}}=\mathlarger{\sum_{n=0}^\infty}\dfrac{(-1)^n(z-i)^{n-1}}{(3i)^{n+1}}$.
+                  \item [(c)] $A_{3,\infty}(i)$\\
+                        \textbf{Answer}: $3<\abs{z-i}<\infty\implies\dfrac{1}{3}>\abs{\dfrac{1}{z-i}}>0$, then $\dfrac{1}{(z-i)(z+2i)}=\dfrac{1}{(z-i)(3i+(z-i))}=\dfrac{1}{(z-i)^2}\cdot\dfrac{1}{1+\dfrac{3i}{z-i}}=\dfrac{1}{(z-i)^2}\mathlarger{\sum_{n=0}^\infty}\dfrac{(-3i)^n}{(z-i)^n}$.
+            \end{itemize}
 \end{itemize}
 \end{document}
