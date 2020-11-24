@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{relsize}
+
+\title{Math 132 Midterm 1}
+\author{Jiaping Zeng}
+\date{10/26/2020}
+
+\begin{document}
+\setstretch{1.5}
+
+\newpage
+\begin{itemize}
+    \item [P3] Evaluate each given integral.
+          \begin{itemize}
+              \item [(a)] $\mathlarger{\int_{C_1(0)}}\dfrac{\sin(5z+1)}{z-2i}dz$\\
+                    \textbf{Answer}: Since the singularity $2i\notin C_1(0)$, $f(z)=\dfrac{\sin(5z+1)}{z-2i}$ is analytic on and inside $C_1(0)$. Therefore we have $\mathlarger{\int_{C_1(0)}}\dfrac{\sin(5z+1)}{z-2i}dz=0$ by Cauchy's integral theorem.
+              \item [(b)] $\mathlarger{\int_{C_2(0)}}\dfrac{\cos\abs{z}}{z}dz$\\
+                    \textbf{Answer}: Let $f(z)=\cos\abs{z}$ and $a=0$, then by Cauchy's integral formula, $\mathlarger{\int_{C_2(0)}}\dfrac{\cos\abs{z}}{z}dz=2\pi if(a)=2\pi i$.
+              \item [(c)] $\mathlarger{\int_{C_3(1)}}\dfrac{e^{3z}}{(z-1+i)^4}dz$\\
+                    \textbf{Answer}: Let $f(z)=e^{3z}$ and $a=1-i$, then $f'(z)=3e^{3z}\implies f''(z)=9e^{3z}\implies f'''(z)=27e^{3z}$. By Cauchy's integral formula, $\mathlarger{\int_{C_3(1)}}\dfrac{e^{3z}}{(z-1+i)^4}dz=\dfrac{2\pi i}{3!}f'''(a)=\dfrac{\pi i}{3}\cdot 27e^{3-3i}=9\pi ie^{3-3i}$.
+          \end{itemize}
+\end{itemize}
+
+\newpage
+\begin{itemize}
+    \item [P5]
+          \begin{itemize}
+              \item [1.] Find the Laurent series for $\dfrac{1}{(z-5)(z+2i)}$ in the annulus $A_{2,5}(0)=\{z\in\mathbb{C}\mid 2<\abs{z}<5\}$.\\
+                    \textbf{Answer}: By partial fractions, we have $\dfrac{1}{(z-5)(z+2i)}=\dfrac{A}{z-5}+\dfrac{B}{z+2i}\implies 1=A(z+2i)+B(z-5)\implies A=\dfrac{1}{5+2i},B=\dfrac{-1}{5+2i}\implies\dfrac{1}{(z-5)(z+2i)}=\dfrac{1}{5+2i}\left(\dfrac{1}{z-5}-\dfrac{1}{z+2i}\right)=\dfrac{1}{5+2i}\left(-\dfrac{1}{5}\cdot\dfrac{1}{1-\frac{z}{5}}-\dfrac{1}{2i}\cdot\dfrac{1}{1+\frac{z}{2i}}\right)$.\\
+                    Then since $\dfrac{z}{5}=\dfrac{\abs{z}}{5}<1$ for $z\in A_{2,5}(0)$, we have $\dfrac{1}{1-\frac{z}{5}}=\mathlarger{\sum_{k=0}^\infty}\dfrac{z^k}{5^k}$. Similarly, since $\abs{\dfrac{z}{2i}}=\dfrac{\abs{z}}{2}>1$ for $z\in A_{2,5}(0)$, we have $\dfrac{1}{1+\frac{z}{2i}}=\mathlarger{\sum_{k=1}^\infty}-\dfrac{(-1)^k(2i)^k}{z^k}=\mathlarger{\sum_{k=1}^\infty}\dfrac{(-1)^{k+1}(2i)^k}{z^k}$.\\
+                    Combining the above, $f(z)=\dfrac{1}{(z-5)(z+2i)}=\dfrac{1}{5+2i}\left(-\dfrac{1}{5}\mathlarger{\sum_{k=0}^\infty}\dfrac{z^k}{5^k}-\dfrac{1}{2i}\mathlarger{\sum_{k=1}^\infty}\dfrac{(-1)^{k+1}(2i)^k}{z^k}\right)=-\dfrac{1}{5+2i}\left(\mathlarger{\sum_{k=0}^\infty}\dfrac{z^k}{5^{k+1}}+\mathlarger{\sum_{k=1}^\infty}\dfrac{(-2i)^{k-1}}{z^k}\right)$ for $z\in A_{2,5}(0)$.
+              \item [2.] Show that there is no constant $M\geq 0$ such that $\abs{\mathlarger{\sum_{n=1}^\infty}\dfrac{z^n}{n^ne^{i\sqrt{n}}}}\leq M$ for all $z\in\mathbb{C}$.\\
+                    \textbf{Answer}: Let $f_n(z)=\dfrac{z^n}{n^ne^{i\sqrt{n}}}$, then $\abs{f_n(z)}=\abs{\dfrac{z^n}{n^ne^{i\sqrt{n}}}}=\dfrac{\abs{z^n}}{\abs{n^n}\abs{e^{i\sqrt{n}}}}=\dfrac{\abs{z^n}}{\abs{n^n}}=\abs{\left(\dfrac{z}{n}\right)^n}$. Since we can always pick $z$ such that $\abs{z}>\abs{n}\implies\abs{\dfrac{z}{n}}>1$, $\abs{f_n(z)}=\abs{\left(\dfrac{z}{n}\right)^n}$ diverges by p-test and therefore no such $M$ exists.
+          \end{itemize}
+\end{itemize}
+
+\newpage
+I certify on my honor that I have neither given nor received any help, or used any non-permitted resources, while completing this evaluation.\\
+Signature:\includegraphics[width=2in]{signature.png}\\
+Date: 11/23/2020
+
+
+\end{document}
