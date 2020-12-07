@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{relsize}
+
+\title{Math 180 Homework 6}
+\date{12/3/2020}
+\author{Jiaping Zeng}
+
+\begin{document}
+\setstretch{1.35}
+\maketitle
+
+\begin{itemize}
+    \item [11.2.2] For a graph $G$ let us put $f(G)=\alpha(G)\cdot\omega(G)$, and let us define $f(n)=\min f(G)$, where the minimum is over all graphs with $n$ vertices.
+          \begin{itemize}
+              \item [(a)] Prove that for $n\in\{1,2,3,4,6\}$ we have $f(n)\geq n$.\\
+                    \textbf{Answer}:
+                    \begin{itemize}
+                        \item [$n=1$:] We have $\alpha(G)=1$ and $\omega(G)=1$ for the graph of a single vertex, so $f(G)=\alpha(G)\cdot\omega(G)=1$ and therefore $f(1)\geq 1$.
+                        \item [$n=2$:] If the two vertices are connected, then we have $\alpha(G)=1$ and $\omega(G)=2$, so $f(G)=2$; if the two are not connected, then we have $\alpha(G)=2$ and $\omega(G)=1$, so $f(G)=2$. Therefore $f(2)=2\geq 2$.
+                        \item [$n=3$:] If we have $\alpha(G)=1$, we must also have $\omega(G)=3$ since if any vertex is disconnected, we would have $\alpha(G)=2$. Similarly, if we have $\omega(G)=1$, we must also have $\alpha(G)=3$ since if any vertex is connected, we would have $\omega(G)=2$. If $\alpha(G)=2$, then we must have exactly one edge, so $\omega(G)=2$. Therefore $f(3)\geq 3$ for all possible cases.
+                        \item [$n=4$:] Similar to the $n=3$ case, if we have $\alpha(G)=1$ we must also have $\omega(G)=4$; if we have $\omega(G)=1$ we must also have $\alpha(G)=4$. If we have $\alpha(G)=2$, then we have $\omega=2$ (two disconnected pairs of connected vertices). If we have $\alpha(G)=3$, then the only scenario is to have a pair of connected vertices and 2 disconnected vertices, so $\omega(G)=2$. In all the cases we have $f(4)\geq 4$.
+                        \item [$n=6$:] By theorem 11.1.1, we must have either $\alpha(G)\geq 3$ or $\omega(G)\geq 3$. Note that if $\alpha(G)=6$ or $\omega(G)=6$, we have trivially $f(G)=6$. Then, if we have $3\leq\alpha(G)\leq 6$, there must exist at least one vertex not in the indepedent set, that is connected to a vertex in the indepedent set. So $\omega(G)\geq 2$ and we have $f(G)\geq 6$ since $\alpha\geq 3$. Similarly, if we have $3\leq\omega(G)\leq 6$, there must exist at least one vertex that is not connected to any other vertex, so $\alpha(G)\geq 2$ and we have $f(G)\geq 6$ since $\omega\geq 3$. Therefore we have $f(6)\geq 6$ in all cases.
+                    \end{itemize}
+              \item [(b)] Prove that $f(5)<5$.\\
+                    \textbf{Answer}: Since $f(5)=\min f(G)$, where $G$ is a graph with 5 vertices, we can show that $f(5)<5$ by finding a graph $G$ where $f(G)<5$, then $\min f(G)\leq 5$ by definition of minimum. Take $C_5$, then we have $\alpha(C_5)=2$ since any 3 vertices must contain at least an edge between two of the vertices. We also have $\omega(C_5)=2$ since any 3 vertices can only contain at most 2 edges among them. So $f(C_5)=4$ and therefore $f(5)\leq 4\implies f(5)<5$.
+          \end{itemize}
+    \item [11.2.3] Show that the function $f(n)$ as in Exercise 2 is nondecreasing and that it is not bounded from above.\\
+          \textbf{Answer}: By contradiction. Suppose $f(n)$ is strictly decreasing, then we must have $f(k)<f(k-1)$ for some $k$. Let $G$ be a graph with $k$ vertices and $G'$ be a graph with $k-1$ vertices, then we must have $f(k)<f(k-1)\implies\min\{\alpha(G)\cdot\omega(G)\}<\min\{\alpha(G')\cdot\omega(G')\}$ for all such $G$ and $G'$. Since $G$ and $G'$ are arbitrary, we can always take $G$ and remove a vertex to obtain $G'$, i.e. $G-v=G'$, which gives us $\alpha(G-v)=\alpha(G')\leq\alpha(G)$ and $\omega(G-v)=\omega(G')\leq\omega(G)$, implying that $\alpha(G')\cdot\omega(G')\leq\alpha(G)\cdot\omega(G)$. But this contradicts with $f(k)<f(k-1)\implies\min\{\alpha(G)\cdot\omega(G)\}<\min\{\alpha(G')\cdot\omega(G')\}$, therefore $f(n)$ must be nondecreasing by contradiction.
+    \item [11.2.4] Prove that $k\leq k'$ and $\ell\leq\ell'$ implies $r(k,\ell)\leq r(k',\ell')$.\\
+          \textbf{Answer}: By definition $r(k,l)=\min\{V(G):\omega(G)\geq k\text{ or }\alpha(G)\geq\ell\}$; since we have $k\leq k'$ and $\ell\leq\ell'$, $\omega(G)\geq k'\text{ or }\alpha(G)\geq\ell'$ implies $\omega(G)\geq k\text{ or }\alpha(G)\geq\ell$. Therefore the set $\{V(G):\omega(G)\geq k'\text{ or }\alpha(G)\geq\ell'\}$ is a subset of the set $\{V(G):\omega(G)\geq k\text{ or }\alpha(G)\geq\ell\}$. Then since we are taking the minimum, we have $r(k,\ell)=\min\{V(G):\omega(G)\geq k\text{ or }\alpha(G)\geq\ell\}\leq\min\{V(G):\omega(G)\geq k'\text{ or }\alpha(G)\geq\ell'\}=r(k',\ell')\implies r(k,\ell)\leq r(k',\ell')$.
+\end{itemize}
+\end{document}
