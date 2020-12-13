@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{relsize}
+
+\title{Math 132 Homework 9}
+\date{12/7/2020}
+\author{Jiaping Zeng}
+
+\begin{document}
+\setstretch{1.5}
+\maketitle
+
+\begin{itemize}
+      \item [5.1.1] $\dfrac{1+z}{z}$\\
+            \textbf{Answer}: We have $\dfrac{1+z}{z}=\dfrac{1}{z}+1$, so by definition of residue, $\Res(\dfrac{1+z}{z},0)=a_{-1}=1$.
+      \item [5.1.3] $\dfrac{1+e^z}{z^2}+\dfrac{2}{z}$\\
+            \textbf{Answer}: We have $\dfrac{1+e^z}{z^2}+\dfrac{2}{z}=\dfrac{1+2z+e^z}{z^2}=\dfrac{1+2z+\sum_{n=0}^\infty\frac{z^n}{n!}}{z^2}=\dfrac{1}{z^2}(2+3z+\dfrac{z^2}{2}+\dfrac{z^3}{6}+\ldots)=\dfrac{2}{z^2}+\dfrac{3}{z}+\dfrac{1}{2}+\dfrac{z}{6}+\ldots$, so $\Res(\dfrac{1+e^z}{z^2}+\dfrac{2}{z},0)=a_{-1}=3$.
+      \item [5.1.4] $\dfrac{\sin(z^2)}{z^2(z^2+1)}$\\
+            \textbf{Answer}: By Proposition $\bigstar$ from the previous homework, $f(z)=\dfrac{\sin(z^2)}{z^2(z^2+1)}=\dfrac{\sin(z^2)}{z^2(z+i)(z-i)}$ has removable singularity at $z_0=0$ and simple poles at $z_0=\pm i$. For $z_0=0$, we have $\Res(f,0)=0$. For $z_0=i$, we have $\Res(f,i)=\mathlarger{\lim_{z\rightarrow i}}(z-i)f(z)=\mathlarger{\lim_{z\rightarrow i}}\dfrac{\sin(z^2)}{z^2(z+i)}=\dfrac{\sin 1}{2i}$. Similarly, for $z_0=-i$, we have $\Res(f,-i)=\mathlarger{\lim_{z\rightarrow -i}}(z+i)f(z)=\mathlarger{\lim_{z\rightarrow -i}}\dfrac{\sin(z^2)}{z^2(z-i)}=\dfrac{\sin 1}{-2i}$.
+      \item [5.1.13] $\mathlarger{\int_{C_1(0)}}\dfrac{z^2+3z-1}{z(z^2-3)}dz$\\
+            \textbf{Answer}: Let $f(z)=z^2+3z-1$ and $g(z)=z(z^2-3)$, then since $g$ has a simple zero at $z_0=0$, we have $\Res(\dfrac{f}{g},0)=\dfrac{f(z_0)}{g'(z_0)}=\dfrac{1}{3}$. Note that $z_0=0$ is the only zero inside $C_1(0)$. Then by Residue Theorem, $\mathlarger{\int_{C_1(0)}}\dfrac{z^2+3z-1}{z(z^2-3)}dz=2\pi i\Res(\dfrac{f}{g},0)=\dfrac{2\pi i}{3}$.
+      \item [5.1.18] $\mathlarger{\int_{C_3(0)}}\dfrac{z^2+1}{(z-1)^2}dz$\\
+            \textbf{Answer}: Let $f(z)=\dfrac{z^2+1}{(z-1)^2}$, then by Proposition $\bigstar$, $f(z)$ has a pole of order 2 at $z_0=1$, so $\Res(f,1)=\mathlarger{\lim_{z\rightarrow 1}}\dfrac{d}{dz}\left[(z-1)^2\cdot\dfrac{z^2+1}{(z-1)^2}\right]=\mathlarger{\lim_{z\rightarrow 1}}2z=2$. By Residue Theorem, $\mathlarger{\int_{C_3(0)}}\dfrac{z^2+1}{(z-1)^2}dz=2\pi i\Res(f,1)=4\pi i$.
+      \item [5.1.21] $\mathlarger{\int_{C_1(0)}}\dfrac{e^{z^2}}{z^6}dz$\\
+            \textbf{Answer}: Let $f(z)=\dfrac{e^{z^2}}{z^6}$, then by Proposition $\bigstar$, $f(z)$ has a pole of order 6 at $z_0=0$, so $\Res(f,0)=\mathlarger{\lim_{z\rightarrow 0}}\dfrac{1}{5!}\dfrac{d^5}{dz^5}\left[z^6\cdot\dfrac{e^{z^2}}{z^6}\right]=\mathlarger{\lim_{z\rightarrow 0}}\dfrac{(32z^5+160z^3+120z)e^{z^2}}{5!}=0$. By Residue Theorem, $\mathlarger{\int_{C_1(0)}}\dfrac{e^{z^2}}{z^6}dz=2\pi i\Res(f,0)=0$.
+      \item [5.1.23] $\mathlarger{\int_{C_1(0)}}z^4(e^\frac{1}{z}+z^2)$\\
+            \textbf{Answer}: We can first split up the integral as follows: $\mathlarger{\int_{C_1(0)}}z^4(e^\frac{1}{z}+z^2)=\mathlarger{\int_{C_1(0)}}z^4e^\frac{1}{z}+\mathlarger{\int_{C_1(0)}}z^6$. Since $z^4e^{\frac{1}{z}}=z^4(\ldots+\dfrac{1}{6!z^6}+\dfrac{1}{5!z^5}+\dfrac{1}{4!z^4}+\ldots)=\ldots+\dfrac{1}{6!z^2}++\dfrac{1}{5!z}++\dfrac{1}{4!}+\ldots$, we have $\Res(z^4e^{\frac{1}{z}},0)=a_{-1}=\dfrac{1}{5!}=\dfrac{1}{120}$. Then by Residue Theorem, $\mathlarger{\int_{C_1(0)}}z^4e^\frac{1}{z}=2\pi i\Res(z^4e^{\frac{1}{z}},0)=\dfrac{\pi i}{60}$. Since $\mathlarger{\int_{C_1(0)}}z^6=0$ by Cauchy's Integral Theorem, $\mathlarger{\int_{C_1(0)}}z^4(e^\frac{1}{z}+z^2)=\mathlarger{\int_{C_1(0)}}z^4e^\frac{1}{z}=\dfrac{\pi i}{60}$.
+      \item [P1] Use residue theory to show that $\mathlarger{\int_{-\infty}^\infty}\dfrac{1}{(x^2+1)^3}dx=\dfrac{3\pi}{8}$.\\
+            \textbf{Answer}: For $R>0$, let $\sigma_R$ be the part of $C_R(0)$ in the upper half plane and let $\gamma_R=[[-R,R],\sigma_R]$. Let $f(z)=\dfrac{1}{(z^2+1)^3}$ ,then we have $\mathlarger{\int_{\gamma_R}}f(z)dz=\mathlarger{\int_{[-R,R]}}f(z)dz+\mathlarger{\int_{\sigma_R}}f(z)dz$.\\
+            We want to first show that $\mathlarger{\int_{\sigma_R}}f(z)dz\rightarrow 0$. Let $L=\text{length}(\sigma_R)=\pi R$. For $z$ on $\sigma_R$, $\abs{f(z)}=\dfrac{1}{\abs{z^2+1}^3}\leq\dfrac{1}{(R^2-1)^3}$ for $R$ large enough. So $\abs{\mathlarger{\int_{\sigma_R}}f(z)dz}\leq ML=\dfrac{\pi R}{(R^2-1)^3}$, which $\rightarrow 0$ as $R\rightarrow\infty$. Therefore $\mathlarger{\lim_{R\rightarrow\infty}\int_{\sigma_R}}f(z)dz=0$.\\
+            We will now find $\mathlarger{\int_{\gamma_R}}f(z)dz$ using residues. We have $f(z)=\dfrac{1}{(z^2+1)^3}=\dfrac{1}{(z+i)^3(z-i)^3}$; since $-i$ is not in $\gamma_R$, we only need to examine $z_0=i$, which is a pole of order 3 by Proposition $\bigstar$. Then $\Res(f,i)=\mathlarger{\lim_{z\rightarrow i}\dfrac{1}{2}\dfrac{d^2}{dz^2}[(z-i)^3f(z)]}=\mathlarger{\lim_{z\rightarrow i}\dfrac{1}{2}\dfrac{d^2}{dz^2}\dfrac{1}{(z+i)^3}}=\mathlarger{\lim_{z\rightarrow i}}\dfrac{6}{(z+i)^5}=\dfrac{-3i}{16}$. By Residue Theorem, $\mathlarger{\int_{\gamma_R}}f(z)dz=2\pi i\Res(f,i)=\dfrac{3\pi}{8}$.\\
+            Then by substitution we have $\mathlarger{\int_{\gamma_R}}f(z)dz=\mathlarger{\int_{[-R,R]}}f(z)dz+\mathlarger{\int_{\sigma_R}}f(z)dz\implies\dfrac{3\pi}{8}=\mathlarger{\int_{[-R,R]}}f(z)dz+0\implies\mathlarger{\int_{[-R,R]}}f(z)dz=\dfrac{3\pi}{8}\implies\mathlarger{\int_{-\infty}^\infty}\dfrac{1}{(x^2+1)^3}dx=\dfrac{3\pi}{8}$.
+      \item [P2] Use residue theory to show that $\mathlarger{\int_{-\infty}^\infty}\dfrac{\cos(3x)}{(x^2+4)^2}dx=\dfrac{7\pi}{16e^6}$.\\
+            \textbf{Answer}: For $R>0$, let $\sigma_R$ be the part of $C_R(0)$ in the upper half plane and let $\gamma_R=[[-R,R],\sigma_R]$. Let $f(z)=\dfrac{e^{3iz}}{(z^2+4)^2}$ ,then we have $\mathlarger{\int_{\gamma_R}}f(z)dz=\mathlarger{\int_{[-R,R]}}f(z)dz+\mathlarger{\int_{\sigma_R}}f(z)dz$.\\
+            We want to first show that $\mathlarger{\int_{\sigma_R}}f(z)dz\rightarrow 0$. Let $L=\text{length}(\sigma_R)=\pi R$. For $z$ on $\sigma_R$, $\abs{f(z)}=\dfrac{e^{\Re(3iz)}}{\abs{z^2+4}^2}\leq\dfrac{1}{(R^2-4)^2}$ for $R$ large enough. So $\abs{\mathlarger{\int_{\sigma_R}}f(z)dz}\leq ML=\dfrac{\pi R}{(R^2-4)^2}$, which $\rightarrow 0$ as $R\rightarrow\infty$. Therefore $\mathlarger{\lim_{R\rightarrow\infty}\int_{\sigma_R}}f(z)dz=0$.\\
+            We will now find $\mathlarger{\int_{\gamma_R}}f(z)dz$ using residues. We have $f(z)=\dfrac{e^{3iz}}{(z^2+4)^2}=\dfrac{e^{3iz}}{(z+2i)^2(z-2i)^2}$; since $-2i$ is not in $\gamma_R$, we only need to examine $z_0=2i$, which is a pole of order 2 by Proposition $\bigstar$. Then $\Res(f,2i)=\mathlarger{\lim_{z\rightarrow 2i}}\dfrac{d}{dz}[(z-2i)^2f(z)]=\mathlarger{\lim_{z\rightarrow 2i}}\dfrac{d}{dz}\dfrac{e^{3iz}}{(z+2i)^2}=\mathlarger{\lim_{z\rightarrow 2i}}\dfrac{3i(z+2i)^2e^{3iz}-2(z+2i)e^{3iz}}{(z+2i)^4}=\dfrac{-48ie^{-6}-8ie^{-6}}{256}=\dfrac{-7ie^{-6}}{32}$. By Residue Theorem, $\mathlarger{\int_{\gamma_R}}f(z)dz=2\pi i\Res(f,2i)=2\pi i\cdot\dfrac{-7ie^{-6}}{32}=\dfrac{7\pi}{16e^6}$.\\
+            Then by substitution we have $\mathlarger{\int_{\gamma_R}}f(z)dz=\mathlarger{\int_{[-R,R]}}f(z)dz+\mathlarger{\int_{\sigma_R}}f(z)dz\implies\dfrac{7\pi}{16e^6}=\mathlarger{\int_{[-R,R]}}f(z)dz+0\implies\mathlarger{\int_{[-R,R]}}f(z)dz=\dfrac{7\pi}{16e^6}\implies\mathlarger{\int_{-\infty}^\infty}\dfrac{e^{3ix}}{(x^2+4)^2}dx=\dfrac{7\pi}{16e^6}$, and we also have $\mathlarger{\int_{-\infty}^\infty}\dfrac{\cos(3x)}{(x^2+4)^2}dx=\Re\left(\mathlarger{\int_{-\infty}^\infty}\dfrac{e^{3ix}}{(x^2+4)^2}dx\right)=\Re\left(\dfrac{7\pi}{16e^6}\right)=\dfrac{7\pi}{16e^6}$.
+      \item [P3] Find the residue at each isolated singularity of the function $f(z)=\dfrac{e^z}{\cos(2z)}$.\\
+            \textbf{Answer}: $\cos(2z)$ has simple zeroes at $z_0=\dfrac{(2k-1)\pi}{4},k\in\mathbb{Z}$; since $e^z$ and $\cos(2z)$ are both analytic at these $z_0$, we have $\Res(\dfrac{f}{g},z_0)=\dfrac{f(z_0)}{g'(z_0)}\implies\Res(\dfrac{e^z}{\cos(2z)},z_0)=\dfrac{e^{z_0}}{-2\sin(2z_0)}$ for $z_0=\dfrac{(2k-1)\pi}{4},k\in\mathbb{Z}$.
+      \item [P4] Suppose $f(z)$ is analytic on and inside a counterclockwise simple closed curve $\gamma$ with no zeroes on $\gamma$. Given that $\gamma$ is the pictured curve, how many zeroes (counting multiplicity) does $f(z)$ have inside $\gamma$?\\
+            \textbf{Answer}: There is not enough information; by counter example: let $f_1(z)=1$, $f_2(z)=z$ and $f_3(z)=z^2$, then they have 0, 1 and 2 zeroes inside $\gamma$ respectively.
+      \item [P5] Show that there is no analytic function $f:B_2(0)\rightarrow\mathbb{C}$ which satisfies \[f\left(\dfrac{1}{n}\right)=\dfrac{(-1)^n}{n^2}\] for $n=1,2,3,\ldots$.\\
+            \textbf{Answer}: By contradiction. Suppose such analytic function $f$ exists. Let $z_{n_k}=\dfrac{1}{k}$ for odd $k$ and $z_{n_k}'=\dfrac{1}{k}$ for even $k$. Then $f(z_{n_k})=-\dfrac{1}{k^2}=-(z_{n_k})^2$. Since $f$ and $-z^2$ are both analytic in $B_2(0)$, we have $f=-z^2$ in $B_2(0)$ by Theorem 4.5.5. Similarly, we have $f(z_{n_k}')=\dfrac{1}{k^2}=(z_{n_k})^2$, so $f=z^2$ in $B_2(0)$. Since $f$ cannot be both $z^2$ and $-z^2$, such $f$ does not exist by contradiction.
+\end{itemize}
+\end{document}
