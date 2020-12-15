@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{physics}
+\usepackage{relsize}
 
 \title{Math 180 Homework 7}
 \date{12/9/2020}
@@ -15,16 +16,20 @@
 \maketitle
 
 \begin{itemize}
-    \item [13.2.4]
+    \item [13.2.4] A square $n\times n$ real matrix $M$ is called \textit{positive definite} if we have $x^TMx>0$ for each nonzero (column) vector $x\in\mathbf{R}^n$.
           \begin{itemize}
-              \item [(a)]
-              \item [(b)]
+              \item [(a)] Why does any positive definite $n\times n$ matrix $M$ have the full rank $n$?\\
+                    \textbf{Answer}: If $M$ is not full rank, i.e. the column are not linearly independent, then there exists a solution to $Mx=0$ by definition of linear independence, which means we would have $x^TMx=0$.
+              \item [(b)] Show that the matrix $M$ used in the proof of Fisher's inequality in the text is positive definite (and hence it has rank $v$, without a calculation of the determinant).\\
+                    \textbf{Answer}: By construction of $M$, each entry $m_{ij}$ can only have two possible values: $\lambda\frac{v-1}{k-1}$ on the diagonal and $\lambda$ elsewhere. Then we have $M=D+L$ where $D$ is a diagonal matrix with positive elements on the diagonal and $L$ is a matrix with all entries $\lambda>0$. For nonzero $x\in\mathbf{R}^n$, we have $x^TDx>0$ and $x^TLx\geq 0$, so $x^TMx>0$ and $M$ is positive definite by definition.
           \end{itemize}
     \item [13.4.1] Verify the formulas (13.2) and (13.3).
           \begin{itemize}
-              \item [13.2]
-              \item [13.3]
+              \item [13.2] For a complete graph with $n$ vertices, it can contain cycles of length 3 to $n$. For each $k$-cycle, $3\leq k\leq n$, we have $\binom{n}{k}$ of choosing its $k$ vertices. We can now reorder the vertices in $k!$ different ways, then divide by $2k$ to account for rotational symmetry. Therefore we have $\abs{\mathcal{K}_{K_n}}=\mathlarger{\sum_{k=3}^n\binom{n}{k}}\dfrac{k!}{2k}=\mathlarger{\sum_{k=3}^n\binom{n}{k}}\dfrac{(k-1)!}{2}$.
+              \item [13.3] For a complete bipartite graph, we need at least 2 vertices from each side to form a cycle. For each cycle with $k$ vertices on each side ($2k$ vertices in total), we choose $k$ vertices on each side, giving us $\binom{n}{k}^2$ possibilities. Then similar to the previous part, we can reorder the vertices on each side in $(k!)^2$ different ways, then divide by $2k$ to accuont for rotational symmetry. Therefore we have $\abs{\mathcal{K}_{K_{n,n}}}=\mathlarger{\sum_{k=2}^n\binom{n}{k}^2}\dfrac{(k!)^2}{2k}=\mathlarger{\sum_{k=2}^n\binom{n}{k}^2}\dfrac{k!(k-1)!}{2}$.
           \end{itemize}
-    \item [P11] Show that block designs of type 2-(21,6,1) and 2-(25,10,3) satisfy the integrality conditions of Theorem 13.1.3 yet fail Fisher's inequality, so cannot constitute valid block designs.
+    \item [P11] Show that block designs of type 2-(21,6,1) and 2-(25,10,3) satisfy the integrality conditions of Theorem 13.1.3 yet fail Fisher's inequality, so cannot constitute valid block designs.\\
+          \textbf{Answer}: For a block design of type 2-(21,6,1), we have $t=2$, $v=21$, $k=6$ and $\lambda=1$. By substitution, we can see that $\lambda\dfrac{v(v-1)}{k(k-1)}=\dfrac{21\cdot 20}{6\cdot 5}=14$ and $\lambda\dfrac{v-1}{k-1}=\dfrac{20}{5}=4$ are both integers, therefore the block design satisfies the integrality conditions. However, $\abs{\mathcal{B}}=\lambda\dfrac{v(v-1)}{k(k-1)}=14\leq 21=\abs{V}$, so it fails Fisher's inequality.\\
+          Similarly, for a block design of type 2-(25,10,3), we have $t=2$, $v=25$, $k=10$ and $\lambda=3$. By substitution, we can see that $\lambda\dfrac{v(v-1)}{k(k-1)}=2\cdot\dfrac{25\cdot 24}{9\cdot 10}=20$ and $\lambda\dfrac{v-1}{k-1}=3\cdot\dfrac{24}{9}=8$ are both integers, therefore the block design satisfies the integrality conditions. However, $\abs{\mathcal{B}}=\lambda\dfrac{v(v-1)}{k(k-1)}=20\leq 25=\abs{V}$, so it also fails Fisher's inequality.
 \end{itemize}
 \end{document}
