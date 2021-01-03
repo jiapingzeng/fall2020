@@ -5,6 +5,4 @@ My coursework during Fall 2020 quarter at UCLA
 
 - MATH180: Graph Theory | [Course outline](https://www.math.ucla.edu/ugrad/courses/math/180)
 
-- MATH168: Introduction to Networks | [Course outline](https://www.math.ucla.edu/ugrad/courses/math/168)
-
-- MATH118: Mathematical Methods of Data Theory | [Course outline](https://www.math.ucla.edu/ugrad/courses/math/118)
+- MATH132: Complex Analysis and Applications | [Course outline](https://www.math.ucla.edu/ugrad/courses/math/132)
